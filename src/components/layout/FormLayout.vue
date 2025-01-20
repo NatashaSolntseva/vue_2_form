@@ -22,7 +22,8 @@ defineProps<{
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 32px;
+  padding-block: 32px 0px;
+  padding-inline: 32px;
 }
 
 .form-header {
