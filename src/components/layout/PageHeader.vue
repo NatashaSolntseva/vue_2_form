@@ -1,12 +1,3 @@
-<template>
-  <header class="page-header">
-    <div class="page-header__container">
-      <IconBrixTemplatesLogo />
-      <SharedButton text="Clone now" @click="onCloneNowClick" />
-    </div>
-  </header>
-</template>
-
 <script setup lang="ts">
 import SharedButton from '@/components/shared/SharedButton.vue'
 import IconBrixTemplatesLogo from '@/components/icons/IconBrixTemplatesLogo.vue'
@@ -15,6 +6,15 @@ const onCloneNowClick = () => {
   console.log('Clone Now button clicked')
 }
 </script>
+
+<template>
+  <header class="page-header">
+    <div class="page-header__container">
+      <IconBrixTemplatesLogo />
+      <SharedButton text="Clone now" @click="onCloneNowClick" />
+    </div>
+  </header>
+</template>
 
 <style scoped>
 .page-header {

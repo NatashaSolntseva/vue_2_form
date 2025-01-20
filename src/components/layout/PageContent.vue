@@ -1,5 +1,9 @@
+<script setup lang="ts">
+import MultiStepFormLayput from '@/components/layout/MultiStepFormLayout.vue'
+</script>
+
 <template>
-  <main class="main-content">Content</main>
+  <main class="main-content"><MultiStepFormLayput /></main>
 </template>
 
 <style scoped>

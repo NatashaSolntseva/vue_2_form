@@ -30,7 +30,10 @@ const onSubscribeClick = () => {
   align-items: center;
   width: 100%;
   padding-block: 42px 44px;
+  border-top: 1px solid var(--neutral-400);
 }
+
+/* TODO Divider */
 
 .page-footer__container {
   display: flex;
