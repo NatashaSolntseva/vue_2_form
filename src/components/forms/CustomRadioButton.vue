@@ -61,7 +61,7 @@ function handleChange() {
 }
 
 .radio-button:hover {
-  border-color: var(--primary-color-1);
+  border-color: var(--primary-color-2);
 }
 
 .radio-button--checked {

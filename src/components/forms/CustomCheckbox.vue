@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, defineEmits, type Component, type DefineComponent, computed } from 'vue'
+import { defineProps, defineEmits, type Component, computed } from 'vue'
 
 const props = defineProps<{
   id: string
@@ -73,6 +73,11 @@ function handleChange(event: Event) {
   border-radius: 8px;
   background-color: var(--neutral-100);
   cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.checkbox-content:hover {
+  border-color: var(--primary-color-2);
 }
 
 .icon-wrapper {

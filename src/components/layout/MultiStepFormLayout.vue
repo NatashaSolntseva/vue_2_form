@@ -85,17 +85,18 @@ function handleSubmit() {
       </div>
     </div>
     <div class="buttons-wrapper">
-      <SharedButton
-        v-if="currentStep > 1"
-        text="Previous step"
-        :is-outlined="true"
-        @click="onPrevClick"
-      />
-      <SharedButton v-if="currentStep < totalSteps" text="Next step" @click="onNextClick" />
+      <div class="button-placeholder">
+        <SharedButton
+          text="Previous step"
+          :is-outlined="true"
+          @click="onPrevClick"
+          v-if="currentStep > 1"
+        />
+      </div>
+      <SharedButton text="Next step" @click="onNextClick" v-if="currentStep < totalSteps" />
     </div>
   </div>
 </template>
-<!-- TODO поправить верстку чтобы кнопка не скакала на первом шаге -->
 
 <style scoped>
 .multi-step-form {
@@ -145,5 +146,12 @@ function handleSubmit() {
 .buttons-wrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.button-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 1px;
 }
 </style>

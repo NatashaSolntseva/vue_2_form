@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue'
+import { defineProps, defineEmits, ref } from 'vue'
 
 defineProps<{
   name: string
@@ -17,13 +17,20 @@ const onInput = (event: Event) => {
     emit('update:modelValue', target.value)
   }
 }
+
+const inputRef = ref<HTMLInputElement | null>(null)
+
+const focusInput = () => {
+  inputRef.value?.focus()
+}
 </script>
 
 <template>
   <div class="input-contact">
     <label :for="name" class="input-label">{{ label }}</label>
-    <div class="input-wrapper">
+    <div class="input-wrapper" @click="focusInput">
       <input
+        ref="inputRef"
         :id="name"
         :name="name"
         :placeholder="placeholder"
@@ -64,6 +71,7 @@ const onInput = (event: Event) => {
   border: 1px solid var(--neutral-300);
   border-radius: 46px;
   box-shadow: 0 2px 6px 0 rgba(19, 18, 66, 0.07);
+  cursor: pointer;
 }
 
 .input-field {
@@ -75,6 +83,7 @@ const onInput = (event: Event) => {
   outline: none;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .input-wrapper:focus-within {

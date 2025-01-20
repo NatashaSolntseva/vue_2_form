@@ -64,8 +64,7 @@ const handleClick = () => {
 }
 
 .shared-button--filled:hover {
-  background-color: var(--secondary-color-1);
-  color: var(--neutral-800);
+  background-color: var(--primary-color-2);
 }
 
 .shared-button--outlined {
@@ -75,7 +74,7 @@ const handleClick = () => {
 }
 
 .shared-button--outlined:hover {
-  background-color: var(--primary-color-1);
-  color: var(--neutral-100);
+  border-color: var(--primary-color-2);
+  color: var(--primary-color-2);
 }
 </style>
