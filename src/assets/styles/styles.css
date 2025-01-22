@@ -1,0 +1,75 @@
+:root {
+  font-family: var(--font-main);
+  line-height: 1;
+  font-weight: 400;
+  color: var(--neutral-800);
+  background-color: var(--neutral-100);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  padding-inline: 100px;
+}
+
+@media (max-width: 1200px) {
+  #app {
+    padding-inline: 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  #app {
+    padding-inline: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  #app {
+    padding-inline: 15px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  font-family: var(--font-main);
+  outline: none;
+  border: none;
+}
+
+button {
+  font-family: var(--font-main);
+}
