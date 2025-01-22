@@ -24,6 +24,24 @@ body {
   padding-inline: 100px;
 }
 
+@media (max-width: 1200px) {
+  #app {
+    padding-inline: 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  #app {
+    padding-inline: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  #app {
+    padding-inline: 15px;
+  }
+}
+
 *,
 *::before,
 *::after {

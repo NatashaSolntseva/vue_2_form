@@ -26,6 +26,13 @@ defineProps<{
   padding-inline: 32px;
 }
 
+@media (max-width: 900px) {
+  .form-layout {
+    gap: 20px;
+    padding: 0px;
+  }
+}
+
 .form-header {
   text-align: left;
   margin-bottom: 24px;
@@ -42,9 +49,27 @@ defineProps<{
   color: var(--neutral-600);
 }
 
+@media (max-width: 900px) {
+  .form-title {
+    font-size: 18px;
+    line-height: 120%;
+  }
+
+  .form-subtitle {
+    font-size: 16px;
+    line-height: 100%;
+  }
+}
+
 .form-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .form-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 </style>

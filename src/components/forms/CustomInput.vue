@@ -60,6 +60,13 @@ const focusInput = () => {
   color: var(--neutral-800);
 }
 
+@media (max-width: 900px) {
+  .input-label {
+    font-size: 16px;
+    line-height: 100%;
+  }
+}
+
 .input-wrapper {
   display: flex;
   align-items: center;
@@ -74,6 +81,13 @@ const focusInput = () => {
   cursor: pointer;
 }
 
+@media (max-width: 900px) {
+  .input-wrapper {
+    padding: 8px;
+    padding-right: 15px;
+  }
+}
+
 .input-field {
   width: 100%;
   flex: 1;
@@ -84,6 +98,13 @@ const focusInput = () => {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .input-field {
+    font-size: 16px;
+    line-height: 100%;
+  }
 }
 
 .input-wrapper:focus-within {

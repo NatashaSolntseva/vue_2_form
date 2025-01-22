@@ -77,4 +77,36 @@ const handleClick = () => {
   border-color: var(--primary-color-2);
   color: var(--primary-color-2);
 }
+
+@media (max-width: 1024px) {
+  .shared-button {
+    padding: 16px 32px;
+  }
+
+  .shared-button--large {
+    height: 55px;
+    font-size: 16px;
+  }
+
+  .shared-button--small {
+    height: 40px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .shared-button {
+    padding: 12px;
+  }
+
+  .shared-button--large {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .shared-button--small {
+    height: 35px;
+    font-size: 12px;
+  }
+}
 </style>

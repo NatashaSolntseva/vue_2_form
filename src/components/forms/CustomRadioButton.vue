@@ -60,6 +60,12 @@ function handleChange() {
     background-color 0.3s ease;
 }
 
+@media (max-width: 900px) {
+  .radio-button {
+    padding: 25px;
+  }
+}
+
 .radio-button:hover {
   border-color: var(--primary-color-2);
 }
@@ -109,5 +115,12 @@ function handleChange() {
   font-size: 18px;
   line-height: 111%;
   color: var(--neutral-800);
+}
+
+@media (max-width: 900px) {
+  .radio-label {
+    font-size: 16px;
+    line-height: 100%;
+  }
 }
 </style>

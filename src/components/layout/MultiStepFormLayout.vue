@@ -67,21 +67,21 @@ function handleSubmit() {
       <SharedDivider />
       <div>
         <ContactForm
-          v-if="currentStep === 1"
+          v-show="currentStep === 1"
           :contact="formData.contact"
           @update:contact="formData.contact = $event"
         />
         <OurServicesForm
-          v-else-if="currentStep === 2"
+          v-show="currentStep === 2"
           :services="formData.services"
           @update:services="formData.services = $event"
         />
         <BudgetForm
-          v-else-if="currentStep === 3"
+          v-show="currentStep === 3"
           :budget="formData.budget"
           @update:budget="formData.budget = $event"
         />
-        <SubmitForm v-else-if="currentStep === 4" :onSubmit="handleSubmit" />
+        <SubmitForm v-show="currentStep === 4" :onSubmit="handleSubmit" />
       </div>
     </div>
     <div class="buttons-wrapper">
@@ -98,6 +98,8 @@ function handleSubmit() {
   </div>
 </template>
 
+<!-- v-show скрывает элемент через CSS (display: none), но не удаляет его из DOM. Это позволяет сохранить состояние компонентов. -->
+
 <style scoped>
 .multi-step-form {
   display: flex;
@@ -106,6 +108,14 @@ function handleSubmit() {
   max-width: 700px;
   margin: 0 auto;
   padding-block: 50px 100px;
+}
+
+@media (max-width: 900px) {
+  .multi-step-form {
+    padding-top: 0px;
+    padding-bottom: 50px;
+    max-width: 100%;
+  }
 }
 
 .form-header {
@@ -123,11 +133,31 @@ function handleSubmit() {
   margin-bottom: 12px;
 }
 
+@media (max-width: 900px) {
+  .form-title {
+    font-size: 28px;
+    line-height: 120%;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-title {
+    font-size: 18px;
+  }
+}
+
 .form-subtitle {
   max-width: 566px;
   font-size: 18px;
   line-height: 170%;
   color: var(--neutral-600);
+}
+
+@media (max-width: 900px) {
+  .form-subtitle {
+    font-size: 16px;
+    line-height: 120%;
+  }
 }
 
 .form-wrapper {
@@ -141,6 +171,13 @@ function handleSubmit() {
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+
+@media (max-width: 900px) {
+  .form-wrapper {
+    padding: 25px;
+    min-height: 615px;
+  }
 }
 
 .buttons-wrapper {

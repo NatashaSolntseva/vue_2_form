@@ -11,7 +11,7 @@ const props = defineProps<{
 
 <template>
   <div class="form-content">
-    <IconSubmit />
+    <IconSubmit class="form-icon" />
     <h2 class="form-title">Submit your quote request</h2>
     <p class="form-subtitle">
       Please review all the information you previously typed in the past steps, and if all is okay,
@@ -48,5 +48,24 @@ const props = defineProps<{
   font-weight: 400;
   color: var(--neutral-600);
   max-width: 496px;
+}
+
+@media (max-width: 900px) {
+  .form-content {
+    gap: 20px;
+  }
+  .form-icon {
+    height: 90px;
+    width: auto;
+  }
+  .form-title {
+    font-size: 18px;
+    line-height: 120%;
+  }
+
+  .form-subtitle {
+    font-size: 16px;
+    line-height: 100%;
+  }
 }
 </style>

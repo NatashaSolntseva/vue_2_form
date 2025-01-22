@@ -40,7 +40,7 @@ function handleChange(event: Event) {
         @change="handleChange"
       />
       <div class="checkbox-content">
-        <div class="icon-wrapper"><component :is="icon" /></div>
+        <div class="icon-wrapper"><component :is="icon" class="icon" /></div>
         <span class="checkbox-label">{{ label }}</span>
       </div>
     </label>
@@ -76,12 +76,19 @@ function handleChange(event: Event) {
   transition: border-color 0.3s ease;
 }
 
+@media (max-width: 900px) {
+  .checkbox-content {
+    height: auto;
+    min-height: 80px;
+    padding: 15px;
+  }
+}
+
 .checkbox-content:hover {
   border-color: var(--primary-color-2);
 }
 
 .icon-wrapper {
-  position: relative;
   width: 67px;
   height: 67px;
   border-radius: 100%;
@@ -89,6 +96,18 @@ function handleChange(event: Event) {
   justify-content: center;
   align-items: center;
   background-color: rgba(102, 51, 255, 0.15);
+}
+
+@media (max-width: 900px) {
+  .icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon {
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .checkbox-label {

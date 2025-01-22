@@ -50,6 +50,16 @@ const stepsArray = computed(() => {
   gap: 16px;
 }
 
+@media (max-width: 600px) {
+  .steps-counter {
+    gap: 8px;
+  }
+
+  .step {
+    gap: 8px;
+  }
+}
+
 .step-number {
   display: flex;
   align-items: center;
@@ -61,6 +71,22 @@ const stepsArray = computed(() => {
   color: var(--neutral-800);
   font-size: 16px;
   font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .step-number {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .step-number {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
 }
 
 .step--active .step-number {
@@ -84,6 +110,18 @@ const stepsArray = computed(() => {
   border-radius: 40px;
   background-color: var(--neutral-300);
   position: relative;
+}
+
+@media (max-width: 600px) {
+  .step-line {
+    width: 50px;
+  }
+}
+
+@media (max-width: 360px) {
+  .step-line {
+    width: 30px;
+  }
 }
 
 .step-line--completed {

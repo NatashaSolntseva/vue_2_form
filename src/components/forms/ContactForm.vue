@@ -3,7 +3,7 @@ import { ref, defineEmits, watch } from 'vue'
 
 import FormLayout from '@/components/layout/FormLayout.vue'
 
-import InputContact from '@/components/forms/InputContact.vue'
+import CustomInput from '@/components/forms/CustomInput.vue'
 import IconAvatar from '@/components/icons/IconAvatar.vue'
 import IconEmail from '@/components/icons/IconEmail.vue'
 import IconPhone from '@/components/icons/IconPhone.vue'
@@ -71,7 +71,7 @@ const inputFields = [
 
 <template>
   <FormLayout title="Contact details" subtitle="Lorem ipsum dolor sit amet consectetur adipiscing.">
-    <InputContact
+    <CustomInput
       v-for="field in inputFields"
       :key="field.name"
       :name="field.name"
@@ -81,6 +81,6 @@ const inputFields = [
       v-model="formData[field.name]"
     >
       <component :is="field.icon" />
-    </InputContact>
+    </CustomInput>
   </FormLayout>
 </template>
