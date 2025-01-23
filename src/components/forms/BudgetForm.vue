@@ -8,7 +8,7 @@ const emits = defineEmits<{
   (event: 'update:budget', value: string): void
 }>()
 
-const selectedBudget = ref<string>('')
+const selectedBudget = ref<string>('$5,000 - $10,000')
 
 watch(selectedBudget, (newValue) => {
   emits('update:budget', newValue)
