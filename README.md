@@ -16,12 +16,12 @@
 
 ## 🛠️ Features
 
-- **Multi-Step Form**: Smooth navigation between multiple steps with validation.
+- **Multi-Step Form**: Navigation between multiple steps.
 - **Dynamic Form State Management**: All user inputs persist across steps.
 - **Custom Components**: Modular design with reusable and configurable form elements like checkboxes, radio buttons, and input fields.
 - **Responsive Design**: Optimized for desktop, tablet, and mobile screens.
 - **Transition Effects**: Seamless transitions and hover effects for enhanced user experience.
-- **Data Handling**: User data is saved to local storage for persistence and debugging.
+- **Data Handling**: User data is saved to local storage.
 
 ---
 
