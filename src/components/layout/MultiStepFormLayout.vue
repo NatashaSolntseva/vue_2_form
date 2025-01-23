@@ -47,9 +47,8 @@ const formData = ref<FormData>({
 })
 
 function handleSubmit() {
-  const cleanData = JSON.parse(JSON.stringify(formData.value))
-  localStorage.setItem('formData', JSON.stringify(cleanData))
-  console.log('Submitted Data:', cleanData)
+  const data = JSON.parse(JSON.stringify(formData.value))
+  localStorage.setItem('formData', JSON.stringify(data))
 }
 </script>
 
@@ -98,7 +97,7 @@ function handleSubmit() {
   </div>
 </template>
 
-<!-- v-show скрывает элемент через CSS (display: none), но не удаляет его из DOM. Это позволяет сохранить состояние компонентов. -->
+<!-- v-show скрывает элемент через CSS (display: none), но не удаляет его из DOM. -->
 
 <style scoped>
 .multi-step-form {
