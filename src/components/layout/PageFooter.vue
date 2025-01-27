@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SharedButton from '@/components/shared/SharedButton.vue'
-import IconBrixTemplatesLogo from '@/components/icons/IconBrixTemplatesLogo.vue'
+import logo from '@/assets/icons/brixLogo.svg'
 
 const onSubscribeClick = () => {}
 </script>
@@ -9,7 +9,7 @@ const onSubscribeClick = () => {}
   <footer class="page-footer">
     <div class="page-footer__container">
       <div class="page-footer__info">
-        <IconBrixTemplatesLogo class="page-footer__logo" />
+        <img class="page-footer__logo" :src="logo" alt="logo" />
         <p class="page-footer__text">Copyright © 2021 BRIX Templates | All Rights Reserved</p>
       </div>
 
@@ -55,6 +55,7 @@ const onSubscribeClick = () => {}
 .page-footer__info {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 8px;
 }
 

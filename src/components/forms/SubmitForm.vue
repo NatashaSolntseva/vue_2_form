@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-
 import SharedButton from '@/components/shared/SharedButton.vue'
-import IconSubmit from '@/components/icons/IconSubmit.vue'
+import iconSubmit from '@/assets/icons/submit.svg'
 
 const props = defineProps<{
   onSubmit: () => void
@@ -11,13 +10,13 @@ const props = defineProps<{
 
 <template>
   <div class="form-content">
-    <IconSubmit class="form-icon" />
+    <img class="form-icon" :src="iconSubmit" alt="icon" />
     <h2 class="form-title">Submit your quote request</h2>
     <p class="form-subtitle">
       Please review all the information you previously typed in the past steps, and if all is okay,
       submit your message to receive a project quote in 24 - 48 hours.
     </p>
-    <SharedButton text="Submit" @click="props.onSubmit" />
+    <SharedButton text="Submit" @click="props.onSubmit" type="submit" />
   </div>
 </template>
 

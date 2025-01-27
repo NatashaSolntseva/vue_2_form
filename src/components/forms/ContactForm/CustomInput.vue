@@ -1,27 +1,43 @@
 <script setup lang="ts">
-import { defineProps, defineEmits, ref } from 'vue'
+import { defineProps, defineEmits, ref, onMounted } from 'vue'
+import IMask from 'imask'
 
-defineProps<{
+const props = defineProps<{
   name: string
   label: string
   placeholder: string
-  type?: string
+  type: 'text' | 'email' | 'tel' | 'password' | 'number' | 'search'
   modelValue: string
 }>()
 
 const emit = defineEmits(['update:modelValue'])
 
-const onInput = (event: Event) => {
-  const target = event.target as HTMLInputElement
-  if (target) {
-    emit('update:modelValue', target.value)
-  }
-}
-
 const inputRef = ref<HTMLInputElement | null>(null)
 
 const focusInput = () => {
   inputRef.value?.focus()
+}
+
+onMounted(() => {
+  if (inputRef.value && props.type === 'tel') {
+    const mask = IMask(inputRef.value, {
+      mask: '(000) 000-0000',
+    })
+
+    mask.on('accept', () => {
+      emit('update:modelValue', mask.value)
+    })
+  }
+})
+
+const onInput = (event: Event) => {
+  const target = event.target as HTMLInputElement | null
+  if (target) {
+    if (props.type === 'tel') {
+      target.value = target.value.replace(/[^0-9]/g, '')
+    }
+    emit('update:modelValue', target.value)
+  }
 }
 </script>
 
@@ -34,10 +50,11 @@ const focusInput = () => {
         :id="name"
         :name="name"
         :placeholder="placeholder"
-        :type="type"
+        :type="type || 'text'"
         :value="modelValue"
         @input="onInput"
         class="input-field"
+        :maxlength="type === 'tel' ? 14 : undefined"
       />
       <span class="input-icon">
         <slot></slot>

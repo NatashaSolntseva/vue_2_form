@@ -2,7 +2,7 @@
 import { defineProps, defineEmits, computed } from 'vue'
 
 const props = defineProps<{
-  id: string
+  name: string
   value: string
   modelValue: string
   label: string
@@ -23,10 +23,16 @@ function handleChange() {
 </script>
 
 <template>
-  <label class="radio-button" :class="{ 'radio-button--checked': isChecked }">
+  <label
+    class="radio-button"
+    :class="{ 'radio-button--checked': isChecked }"
+    :for="`${name}-${value}`"
+  >
     <input
       class="radio-input"
       type="radio"
+      :id="`${name}-${value}`"
+      :name="name"
       :value="value"
       :checked="isChecked"
       @change="handleChange"

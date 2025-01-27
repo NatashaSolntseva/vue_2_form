@@ -4,10 +4,12 @@ import SharedButton from '@/components/shared/SharedButton.vue'
 import SharedDivider from '@/components/shared/SharedDivider.vue'
 import StepsCounter from '@/components/forms/StepsCounter.vue'
 
-import ContactForm from '@/components/forms/ContactForm.vue'
-import OurServicesForm from '@/components/forms/OurServicesForm.vue'
-import BudgetForm from '@/components/forms/BudgetForm.vue'
+import ContactForm from '@/components/forms/ContactForm/ContactForm.vue'
+import OurServicesForm from '@/components/forms/OurServicesForm/OurServicesForm.vue'
+import BudgetForm from '@/components/forms/BudgetForm/BudgetForm.vue'
 import SubmitForm from '@/components/forms/SubmitForm.vue'
+
+import type { FormData } from './MultiStepFormLayout.types'
 
 const currentStep = ref(1)
 const totalSteps = 4
@@ -24,17 +26,6 @@ const onPrevClick = () => {
   }
 }
 
-interface FormData {
-  contact: {
-    name: string
-    email: string
-    phone: string
-    company: string
-  }
-  services: string[]
-  budget: string
-}
-
 const formData = ref<FormData>({
   contact: {
     name: '',
@@ -49,6 +40,7 @@ const formData = ref<FormData>({
 function handleSubmit() {
   const data = JSON.parse(JSON.stringify(formData.value))
   localStorage.setItem('formData', JSON.stringify(data))
+  console.log(data)
 }
 </script>
 

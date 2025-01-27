@@ -1,4 +1,3 @@
-<template>
   <svg width="39" height="33" viewBox="0 0 39 33" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="2.10779" y="2.38574" width="34.0457" height="28.1681" fill="white" />
     <rect x="7.2757" y="10.8428" width="23.7094" height="5.66188" rx="0.680278" fill="#4A3AFF" />
@@ -10,4 +9,3 @@
       fill="#4A3AFF"
     />
   </svg>
-</template>
