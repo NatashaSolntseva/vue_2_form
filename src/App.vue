@@ -1,15 +1,7 @@
 <script setup lang="ts">
-import PageHeader from '@/components/layout/PageHeader.vue'
-import PageFooter from '@/components/layout/PageFooter.vue'
-import PageContent from '@/components/layout/PageContent.vue'
-import SharedDivider from './components/shared/SharedDivider.vue'
+import MainPage from '@/pages/MainPage.vue'
 </script>
 
 <template>
-  <PageHeader />
-  <PageContent />
-  <SharedDivider />
-  <PageFooter />
+  <MainPage />
 </template>
-
-<style scoped></style>

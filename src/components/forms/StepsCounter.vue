@@ -14,8 +14,8 @@ const stepsArray = computed(() => {
 <template>
   <div class="steps-counter">
     <div
-      v-for="(step, index) in stepsArray"
-      :key="index"
+      v-for="step in stepsArray"
+      :key="step"
       class="step"
       :class="{
         'step--active': step === currentStep,

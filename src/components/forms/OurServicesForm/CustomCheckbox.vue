@@ -2,21 +2,15 @@
 import { defineProps, defineEmits, type Component, computed } from 'vue'
 
 const props = defineProps<{
-  id: string
   value: string
   label: string
-  icon: Component
+  icon: string
   modelValue: string[]
 }>()
 
 const emits = defineEmits<{
   (event: 'update:modelValue', value: string[]): void
 }>()
-
-const modelValue = computed<string[]>({
-  get: () => props.modelValue,
-  set: (value: string[]) => emits('update:modelValue', value),
-})
 
 function handleChange(event: Event) {
   const target = event.target as HTMLInputElement
@@ -25,7 +19,7 @@ function handleChange(event: Event) {
     ? [...props.modelValue, newValue]
     : props.modelValue.filter((v) => v !== newValue)
 
-  modelValue.value = updatedValue
+  emits('update:modelValue', updatedValue)
 }
 </script>
 
@@ -40,7 +34,9 @@ function handleChange(event: Event) {
         @change="handleChange"
       />
       <div class="checkbox-content">
-        <div class="icon-wrapper"><component :is="icon" class="icon" /></div>
+        <div class="icon-wrapper">
+          <img class="icon" :src="icon" :alt="label" />
+        </div>
         <span class="checkbox-label">{{ label }}</span>
       </div>
     </label>

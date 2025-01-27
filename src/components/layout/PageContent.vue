@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MultiStepFormLayput from '@/components/layout/MultiStepFormLayout.vue'
+import MultiStepFormLayput from '@/components/layout/MultiStepFormLayout/MultiStepFormLayout.vue'
 </script>
 
 <template>

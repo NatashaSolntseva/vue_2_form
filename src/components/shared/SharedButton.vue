@@ -1,32 +1,29 @@
 <script setup lang="ts">
 import { withDefaults, defineProps } from 'vue'
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     text: string
-    onClick: () => void
     isOutlined?: boolean
     size?: 'large' | 'small'
+    type?: 'button' | 'submit'
   }>(),
   {
     isOutlined: false,
     size: 'large',
+    type: 'button',
   },
 )
-
-const handleClick = () => {
-  if (props.onClick) props.onClick()
-}
 </script>
 
 <template>
   <button
+    :type="type"
     :class="[
       'shared-button',
       isOutlined ? 'shared-button--outlined' : 'shared-button--filled',
       size === 'large' ? 'shared-button--large' : 'shared-button--small',
     ]"
-    @click="handleClick"
   >
     {{ text }}
   </button>
